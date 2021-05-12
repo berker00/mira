@@ -3,6 +3,8 @@ Sesli Asistan: Mira
 
 İndirmeniz gereken kütüphaneler:
 - SpeechRecognition
+- gTTS
+- PyObjC
 - PyAudio*
 - playsound
 - wikipedia (opsiyonel)
