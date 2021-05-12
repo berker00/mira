@@ -14,3 +14,5 @@ macOS için PyAudio yüklerken bazı sorunlarla karşılaşabilirsiniz. Terminal
   pip install pyaudio
 Sorun yaşamaya devam ederseniz:
   xcode-select --install
+
+İçeriği hazırlarken yardım aldığım YouTube videosu: https://youtu.be/x8xjj6cR9Nc
