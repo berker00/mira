@@ -1,16 +1,20 @@
+# Ses tanıma
 import speech_recognition as SpeechRecognition
 
+# Seslendirme
 import playsound as PlaySound
 from gtts import gTTS
 import os
 import random
 
+# İşlevsel kodlar için
 from time import ctime
 import wikipedia
 
 recognizer = SpeechRecognition.Recognizer()
 
 
+# Ses tanıma fonksiyonu
 def recordAudio():
     with SpeechRecognition.Microphone() as source:
         audio = recognizer.listen(source)
@@ -28,6 +32,7 @@ def recordAudio():
         return voiceData
 
 
+# Seslendirme fonksiyonu
 def speak(audioString):
     textToSpeech = gTTS(text=audioString, lang='en')
     r = random.randint(1, 999999999999)
@@ -38,11 +43,17 @@ def speak(audioString):
     os.remove(audioFile)
 
 
+# Uygulamanın vereceği bazı cevaplar
 def respond(voiceData):
+    # Asistanın ismi
     if 'what is your name' in voiceData:
         speak('My name is Mira.')
+    
+    # Nasılsın
     if 'how are you' in voiceData:
         speak('Thanks! How about you?')
+        
+    # Saat
     if 'time' in voiceData:
         time = ctime().split(" ")[3].split(":")[0:2]
         if time[0] == "00":
@@ -52,6 +63,8 @@ def respond(voiceData):
         minutes = time[1]
         time = f'{hours}:{minutes}'
         speak(time)
+    
+    # Wikipedia araması
     if 'what is' in voiceData:
         search = voiceData.split('is')[-1]
         try:
@@ -60,10 +73,12 @@ def respond(voiceData):
             speak(wikipedia.summary(subject))
         except:
             speak('There is a problem with this subject. Please try anything else.')
+    
+    # Uygulamadan çıkış
     if 'goodbye' in voiceData:
         exit()
 
-
+# Uygulamanın çalıştıracağı kod döngüsü
 speak('How can I help you?')
 while True:
     voiceData = recordAudio()
