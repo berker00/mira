@@ -1,5 +1,5 @@
-# mira
-Voice Assistant: Mira
+# Mira
+Sesli Asistan: Mira
 
 İndirmeniz gereken kütüphaneler:
 - SpeechRecognition
