@@ -10,9 +10,9 @@ Sesli Asistan: Mira
 *PyAudio, speech_recognition.Microphone() için gereklidir.
 
 macOS için PyAudio yüklerken bazı sorunlarla karşılaşabilirsiniz. Terminal üzerinden yüklemeniz gerekiyor. Homebrew kullanarak yükleme yaparsanız sorun çözülecektir.
-  brew install portaudio
-  pip install pyaudio
+ - brew install portaudio
+ - pip install pyaudio
 Sorun yaşamaya devam ederseniz:
-  xcode-select --install
+ - xcode-select --install
 
 İçeriği hazırlarken yardım aldığım YouTube videosu: https://youtu.be/x8xjj6cR9Nc
